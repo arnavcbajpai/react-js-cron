@@ -42,6 +42,13 @@ export default function Cron(props: CronProps) {
     clockFormat,
     periodicityOnDoubleClick = true,
     mode = 'multiple',
+    customMode = {
+      year: 'multiple',
+      month: 'multiple',
+      week: 'multiple',
+      hour: 'multiple',
+      minute: 'multiple'
+    },
     allowedDropdowns = [
       'period',
       'months',
@@ -59,7 +66,6 @@ export default function Cron(props: CronProps) {
       'minute',
       'reboot',
     ],
-    componentProps
   } = props
   const internalValueRef = useRef<string>(value)
   const defaultPeriodRef = useRef<PeriodType>(defaultPeriod)
@@ -305,8 +311,7 @@ export default function Cron(props: CronProps) {
                 readOnly={readOnly}
                 period={periodForRender}
                 periodicityOnDoubleClick={periodicityOnDoubleClick}
-                 mode={componentProps?.year?.mode ?? mode}
-                 unitFilter={componentProps?.year?.unitFilter ?? undefined}
+                mode={mode}
               />
             )}
 
@@ -323,8 +328,7 @@ export default function Cron(props: CronProps) {
                 leadingZero={leadingZero}
                 period={periodForRender}
                 periodicityOnDoubleClick={periodicityOnDoubleClick}
-                mode={componentProps?.month?.mode ?? mode}
-                unitFilter={componentProps?.month?.unitFilter ?? undefined}
+                mode={mode}
               />
             )}
 
@@ -343,8 +347,7 @@ export default function Cron(props: CronProps) {
                 readOnly={readOnly}
                 period={periodForRender}
                 periodicityOnDoubleClick={periodicityOnDoubleClick}
-                mode={componentProps?.week?.mode ?? mode}
-                unitFilter={componentProps?.week?.unitFilter ?? undefined}
+                mode={mode}
               />
             )}
 
@@ -363,8 +366,7 @@ export default function Cron(props: CronProps) {
                   clockFormat={clockFormat}
                   period={periodForRender}
                   periodicityOnDoubleClick={periodicityOnDoubleClick}
-                  mode={componentProps?.hour?.mode ?? mode}
-                  unitFilter={componentProps?.hour?.unitFilter ?? undefined}
+                  mode={customMode?.hour}
                 />
               )}
 
@@ -381,8 +383,7 @@ export default function Cron(props: CronProps) {
                   leadingZero={leadingZero}
                   clockFormat={clockFormat}
                   periodicityOnDoubleClick={periodicityOnDoubleClick}
-                  mode={componentProps?.minute?.mode ?? mode}
-                  unitFilter={componentProps?.minute?.unitFilter ?? undefined}
+                  mode={customMode?.minute}
                 />
               )}
 
