@@ -59,6 +59,7 @@ export default function Cron(props: CronProps) {
       'minute',
       'reboot',
     ],
+    componentProps
   } = props
   const internalValueRef = useRef<string>(value)
   const defaultPeriodRef = useRef<PeriodType>(defaultPeriod)
@@ -304,7 +305,8 @@ export default function Cron(props: CronProps) {
                 readOnly={readOnly}
                 period={periodForRender}
                 periodicityOnDoubleClick={periodicityOnDoubleClick}
-                mode={mode}
+                 mode={componentProps?.year?.mode ?? mode}
+                 unitFilter={componentProps?.year?.unitFilter ?? undefined}
               />
             )}
 
@@ -321,7 +323,8 @@ export default function Cron(props: CronProps) {
                 leadingZero={leadingZero}
                 period={periodForRender}
                 periodicityOnDoubleClick={periodicityOnDoubleClick}
-                mode={mode}
+                mode={componentProps?.month?.mode ?? mode}
+                unitFilter={componentProps?.month?.unitFilter ?? undefined}
               />
             )}
 
@@ -340,7 +343,8 @@ export default function Cron(props: CronProps) {
                 readOnly={readOnly}
                 period={periodForRender}
                 periodicityOnDoubleClick={periodicityOnDoubleClick}
-                mode={mode}
+                mode={componentProps?.week?.mode ?? mode}
+                unitFilter={componentProps?.week?.unitFilter ?? undefined}
               />
             )}
 
@@ -359,7 +363,8 @@ export default function Cron(props: CronProps) {
                   clockFormat={clockFormat}
                   period={periodForRender}
                   periodicityOnDoubleClick={periodicityOnDoubleClick}
-                  mode={mode}
+                  mode={componentProps?.hour?.mode ?? mode}
+                  unitFilter={componentProps?.hour?.unitFilter ?? undefined}
                 />
               )}
 
@@ -376,7 +381,8 @@ export default function Cron(props: CronProps) {
                   leadingZero={leadingZero}
                   clockFormat={clockFormat}
                   periodicityOnDoubleClick={periodicityOnDoubleClick}
-                  mode={mode}
+                  mode={componentProps?.minute?.mode ?? mode}
+                  unitFilter={componentProps?.minute?.unitFilter ?? undefined}
                 />
               )}
 

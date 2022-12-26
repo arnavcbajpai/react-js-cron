@@ -167,7 +167,36 @@ export interface CronProps {
    * Default './locale.ts'
    */
   locale?: Locale
+
+  componentProps?: {
+    year?: { mode?: Mode; unitFilter?: UnitFilter }
+    month?: { mode?: Mode; unitFilter?: UnitFilter }
+    week?: {
+      mode?: Mode
+      unitFilter?: UnitFilter
+    }
+    day?: {
+      mode?: Mode
+      unitFilter?: UnitFilter
+    }
+    hour?: {
+      mode?: Mode
+      unitFilter?: UnitFilter
+    }
+    minute?: {
+      mode?: Mode
+      unitFilter?: UnitFilter
+    }
+  }
 }
+
+export type UnitFilter = ({
+  value,
+  label,
+}: {
+  value: string
+  label: string
+}) => boolean
 export interface Locale {
   everyText?: string
   emptyMonths?: string
@@ -265,6 +294,7 @@ export interface FieldProps {
   period: PeriodType
   periodicityOnDoubleClick: boolean
   mode: Mode
+  unitFilter??: UnitFilter
 }
 export interface PeriodProps
   extends Omit<
@@ -326,6 +356,7 @@ export interface CustomSelectProps
   clockFormat?: ClockFormat
   period: PeriodType
   unit: Unit
+  unitFilter??: UnitFilter
   periodicityOnDoubleClick: boolean
   mode: Mode
 }
