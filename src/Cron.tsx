@@ -383,7 +383,7 @@ export default function Cron(props: CronProps) {
                   leadingZero={leadingZero}
                   clockFormat={clockFormat}
                   periodicityOnDoubleClick={periodicityOnDoubleClick}
-                  mode={customMode.minute ?? 'multiple'}
+                  mode='single'
                 />
               )}
 
