@@ -142,11 +142,11 @@ export interface CronProps {
   mode: Mode
   
   customMode?: {
-    year?: Mode,
-    month?: Mode,
-    week?: Mode,
-    hour?: Mode,
-    minute?: Mode
+    year?: Mode  | undefined,
+    month?: Mode  | undefined,
+    week?: Mode  | undefined,
+    hour?: Mode  | undefined,
+    minute?: Mode  | undefined
   }
 
   /**
