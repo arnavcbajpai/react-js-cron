@@ -24,6 +24,7 @@ package-lock.json
 !/.storybook/
 !/.yarn/
 !/src/
+!/dist/
 
 ## dot-files
 !/.babelrc

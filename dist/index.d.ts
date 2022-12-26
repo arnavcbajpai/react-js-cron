@@ -21,17 +21,18 @@ interface CronProps {
     displayError?: boolean;
     onError?: OnError;
     periodicityOnDoubleClick?: boolean;
-    mode: Mode;
-    customMode?: {
-        year?: Mode | undefined;
-        month?: Mode | undefined;
-        week?: Mode | undefined;
-        hour?: Mode | undefined;
-        minute?: Mode | undefined;
-    };
+    mode?: Mode;
     allowedDropdowns?: CronType[];
     allowedPeriods?: PeriodType[];
     locale?: Locale;
+    dropDownsMode?: {
+        period?: Mode;
+        months?: Mode;
+        monthDays?: Mode;
+        weekDays?: Mode;
+        hours?: Mode;
+        minutes?: Mode;
+    };
 }
 interface Locale {
     everyText?: string;
