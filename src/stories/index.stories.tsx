@@ -55,6 +55,7 @@ export function Demo() {
             value: values.inputValue,
           })
         }}
+        status={error ? 'error' : ''}
       />
 
       <Divider>OR</Divider>

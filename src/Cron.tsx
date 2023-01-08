@@ -54,10 +54,7 @@ export default function Cron(props: CronProps) {
       'year',
       'month',
       'week',
-      'day',
-      'hour',
-      'minute',
-      'reboot',
+      'day'
     ],
     dropDownsMode,
   } = props
